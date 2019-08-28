@@ -1,0 +1,59 @@
+---------------------------
+- pause
+- load preset (preferences button)
+- Evolution menu icons
+- About MIT links, browser
+- fix image size
+*
+- Rearrange toolbar buttons
+- Play settings composite
+* toString() additions
+* octave corrections
+
+
+---------------------------
+
+* prevent play/stop button abuse
+* add drop-down instrument/tempo selection to play button
+* fix toggle button visual artifacts
+
+
+- Chart colors (black) - headings - saved as swtwiki
+- icon transparencies
+- center dialogs
+- File -> Exit
+* Status Bar aligh left
+- preferences label alignment center
+- evolutionary process thread
+* evolutionary monitor messages
+- slider button width
+* music tempo and add bpm
+- evolutionary + music , remove not needed stuff
+- fix evolutionary labels
+- chromosome chart fix label
+* check preferred application size
+- Add filter weights (0,2)
+- Add Preferences for filter selection and weigth optimization
+- Increase chromosome notes to 64 max
+- Create Preferences scale editor + presets (minor, pendatonic) / center
+- Create about dialog with hyperlinks
+- Beautify iteration input dialog
+- Create .exe launcher ala eclipse
+- enable/disable button states
+* chromosome chart, filer weights addition
+- Play/Stop button status, fix thread
+- Fix information iteration count, label -> Information Log
+- Information Log about filters, scale
+- Evolutionary Presets (MANDATORY) with conf files, save a preset
+- Change evolve to evolve last numbered generations
+- find pattern matching lib - http://johannburkard.de/software/stringsearch/
+- add duration selection
+- math double comparison - BigDecimal
+* math double round
+- config set property
+* unittest max/min filter values
+* conf max/min values with constants
+* gui interface for constants
+- version constants - 0.1.0 alpha
+- tournament natural selector runtime error
+* license

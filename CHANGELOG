@@ -1,0 +1,24 @@
+-----------------------
+version 0.1.2
+-----------------------
+* WeightedRouletteSelector removed
+* Preferences fix for natural selectors
+* Information log is appended in the end of the evolution
+* toggle play/pause button - fixed visual artifacts
+* simplePitch/simpleDuration default preset fix
+* preset combo changed to push button, same as edit -> presets
+* separate duration tab
+* various duration fixes
+* addition of icon.ico
+* pause button, playing thread corrections
+* file -> save
+* filter percentage corrections
+* duration tab corrections
+* scale tab new features, select scale, add custom scale etc. - conf files fixes
+* preset default configuration check for deletion
+* version fields
+* about composite
+* evolutionary monitor fixes, cancel button works
+* iterations setting
+* save(replace) corrected
+

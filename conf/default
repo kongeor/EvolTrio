@@ -1,0 +1,198 @@
+#
+# This file is a default (template) configuration file
+# that comes with EvolTrio.
+#
+# Every line that starts with # is a comment
+#
+
+# -----------------------------------------------------------------------------
+# Music Parameters
+# -----------------------------------------------------------------------------
+
+
+# Beggining Duration is the initial note duration in the, 
+# the value is a bit general ... because the allowed duration set 
+# has not beign specified strictly.
+
+begDur = 3
+
+
+# The number of notes for each phrase
+
+phraseNotes = 16
+
+
+# Sets the max interval jump between two adjacent notes
+# e.g is the given note is F and the intJump is 5, the adjacent note can be A#
+
+intJump = 7
+
+
+# Sets the max duration jump between two adjacent notes
+# e.g. is the max jump is 2 from a eight we can get a ha
+
+durJump = 2
+
+
+# The pitch of the key note. Allowed values are the values in the 
+# classic notation : [ C | C# | .. | B ]
+
+root = C
+
+
+# The octave of the key note. 
+# the default value is 5 which with the keyNote C (0) is (5+1) + 0 = 72
+# integer note value which represent note + octave
+
+octave = 5
+
+
+# How fast ? Tempo ....
+# Check jfugue documentation for allowed values 
+
+tempo = ADAGIO
+
+
+# The midi instrument that the solist is going to use.
+# The list of the allowed music organs are listed in the jfugue manual.
+
+instrument = 72
+
+# Active Duration list
+
+activeDurationList = h,q,i,s
+
+# Selected Scale Name
+scaleName=MAJOR
+
+# Selected Scale Intervals
+scaleIntervals=0,2,4,5,7,9,11,
+
+
+# -----------------------------------------------------------------------------
+# Evolutionary Parameters
+# -----------------------------------------------------------------------------
+
+# The random generator to use
+# Allowed values: STOCK , CAUCHY , GAUSSIAN.
+
+randomGen = stock
+
+
+# The natural selector to use
+# Allowed value BEST , THRESHOLD , TOURNAMENT , WEIGHTED
+
+naturalSel = best
+
+
+# Execute the natural selector before the genetic operators
+# In general it's best to use the natural selector after the alteration
+# of the chromosome 
+
+execBefore = false
+
+
+# Minimum percent size guaranteed for population
+# allowed values are a double in [0,1]
+# TODO I haven't figure yet the meaning of this.
+
+minPop = 0
+
+
+# Defines the percentage of the chromosomes that are going to enter 
+# the new population
+# allowed values are a double in [0,1]
+
+previousGen = 1
+
+
+# Keep constant the population size
+
+popConstant = false
+
+
+# Defines the crossover rate 
+# allowed values are a double in [0,1]
+
+crossover = 0.55
+
+
+# Defines the mutation rate
+# allowed values are a integer in [0,100]
+
+mutation = 32
+
+
+# Defines the population size
+# allowed values are a integer in [0,1000]
+
+population = 100
+
+
+# Sets the number of iterations that each phrase will evolve
+# allowed values are a integer in [1,10000]
+
+iterations = 100
+
+
+# -----------------------------------------------------------------------------
+# Fitness Parameters
+# -----------------------------------------------------------------------------
+
+# Enables simple pitch fitness filter
+
+simplepitch = true
+pitchWeight = 1.0
+
+
+# Enables simple duration fitness filter
+
+simpleduration = true
+durationWeight = 1.0
+
+
+# Enables scale notes fitness filter. USE THIS!
+
+scale = true
+scaleWeight = 1.0
+
+
+# Enables time fitness filter
+
+time = true
+timeWeight = 1.0
+
+
+# Enables diversity fitness filter
+
+diversity = true
+diversityWeight = 1.0
+
+
+# Enables repetition of root notes fitness filter
+
+rootNote = true
+rootNoteWeight = 1.0
+
+
+# Enables a different repetition of notes fitness filter
+
+pattern = true
+patternWeight = 1.0
+
+
+# Enables ascending/descending notes fitness filter
+
+direction = true
+directionWeight = 1.0
+
+
+# Enables all the above filters. 
+# Enabled this setting overrides all the above.
+
+filtAll = false
+
+
+# The file to save the created file
+
+file = song.mid

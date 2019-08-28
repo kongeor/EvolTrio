@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'application'
+
+    id "com.diffplug.gradle.eclipse.mavencentral" version "3.18.0"
+}
+
+mainClassName = 'gr.evoltrio.ui.EvolTrioUI'
+
+repositories {
+    // Use jcenter for resolving dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'lib')
+    compile group: 'com.ibm.icu', name: 'icu4j', version: '4.6.1.1'
+    // Your might already have other librarires/dependencies here you should leave them
+    // as they are and just add your on new line
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'gr.evoltrio.ui.EvolTrioUI'
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    // the eclipse jars are signed, and our fat jar breaks the signatures
+    // so we've gotta be sure to filter out the signatures
+    exclude 'META-INF/*.RSA'
+    exclude 'META-INF/*.SF'
+}
+
+eclipseMavenCentral {
+    release '4.12.0', {
+        compile 'org.eclipse.swt'
+        compile 'org.eclipse.jface'
+        compile 'org.eclipse.ui.forms'
+        useNativesForRunningPlatform()
+    }
+}
+
