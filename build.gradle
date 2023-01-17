@@ -14,18 +14,21 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'lib')
-    compile group: 'com.ibm.icu', name: 'icu4j', version: '4.6.1.1'
+    implementation fileTree(include: ['*.jar'], dir: 'lib')
+    implementation group: 'com.ibm.icu', name: 'icu4j', version: '4.6.1.1'
     // Your might already have other librarires/dependencies here you should leave them
     // as they are and just add your on new line
 }
 
 jar {
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
     manifest {
         attributes 'Main-Class': 'gr.evoltrio.ui.EvolTrioUI'
     }
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
     // the eclipse jars are signed, and our fat jar breaks the signatures
     // so we've gotta be sure to filter out the signatures
@@ -35,9 +38,9 @@ jar {
 
 eclipseMavenCentral {
     release '4.12.0', {
-        compile 'org.eclipse.swt'
-        compile 'org.eclipse.jface'
-        compile 'org.eclipse.ui.forms'
+        implementation 'org.eclipse.swt'
+        implementation 'org.eclipse.jface'
+        implementation 'org.eclipse.ui.forms'
         useNativesForRunningPlatform()
     }
 }
